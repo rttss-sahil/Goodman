@@ -1,22 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import 'react-native-gesture-handler';
+import React, { Component, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import configs from './config/config';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import EmailPasswordLogin from './App/Auth/EmailPasswordLogin';
+import { database } from './App/Database/firebase.database';
+import BottomNavigator from './App/components/BootomNavigator';
+
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { loggedIn: false }
+  }
+
+  onLogPress = {
+    In: () => {
+      EmailPasswordLogin.logUserIn("sahilrathee.55@gmail.com", "incorr348");
+      this.setState({ loggedIn: this.checkLoggedIn() })
+    },
+    Out: () => {
+      EmailPasswordLogin.logUserOut();
+      this.setState({ loggedIn: this.checkLoggedIn() })
+    }
+  }
+  checkLoggedIn = () => EmailPasswordLogin.checkUserLoggedIn()
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>
+          Juuuuu
+        </Text>
+        {/* <BottomNavigator /> */}
+      </View>
+      // <BottomNavigator />
+    )
+  }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
+
+
+export default App;
