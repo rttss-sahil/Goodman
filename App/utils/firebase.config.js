@@ -14,9 +14,11 @@ export const config = {
 
 !firebase.apps.length ? firebase.initializeApp(config) : firebase.app()
 
-export default f = {
+const f = {
     firebase,
     auth: firebase.auth(),
     database: firebase.database(),
     storage: firebase.storage()
 }
+
+export default f

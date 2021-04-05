@@ -4,9 +4,10 @@ import { Text, View } from 'react-native';
 export class Profile extends Component {
     render() {
         return (
-            <Text>
-                hee;
-            </Text>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Text>Prodile!</Text>
+
+            </View >
         )
     }
 }

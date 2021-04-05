@@ -4,10 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 
 import EmailPasswordLogin from './App/Auth/EmailPasswordLogin';
-import { database } from './App/Database/firebase.database';
+// import { database } from './App/Database/firebase.database';
 import BottomNavigator from './App/components/BootomNavigator';
-
-
+import { NavigationContainer } from '@react-navigation/native';
 class App extends Component {
   constructor(props) {
     super(props)
@@ -28,23 +27,13 @@ class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>
-          Juuuuu
-        </Text>
-        {/* <BottomNavigator /> */}
-      </View>
-      // <BottomNavigator />
+      <NavigationContainer>
+        <BottomNavigator />
+      </NavigationContainer>
     )
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
+
 
 
 export default App;

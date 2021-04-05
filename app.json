@@ -5,6 +5,11 @@
     "name": "Goodman",
     "slug": "Goodman",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"]
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "io.goodman.rttss"
+    }
   }
 }
