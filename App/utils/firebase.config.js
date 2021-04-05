@@ -21,4 +21,4 @@ const f = {
     storage: firebase.storage()
 }
 
-export default f
+export default f;
